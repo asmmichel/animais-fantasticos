@@ -1,0 +1,18 @@
+.grid-interno-dos-numeros {
+  grid-column: 2/4; /* Falando com o grid-das-sections */
+  display: grid;
+  grid-template-columns: 1fr 1fr /* Falando com o grid-dos-animais */
+}
+
+.animal-e-seu-numero h3 {
+  font-family: 'Playfair Display SC';
+  font-size: 2rem;
+  margin-bottom: .5rem
+}
+
+.animal-e-seu-numero span {
+  font-family: 'IMB Plex Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #E54;
+}

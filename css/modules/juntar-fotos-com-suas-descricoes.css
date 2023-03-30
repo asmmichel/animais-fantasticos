@@ -1,0 +1,41 @@
+.js [data-fotos-dos-animais] li {
+  cursor: pointer;
+}
+
+.js [data-descricoes-dos-animais] section {
+  display: none;
+}
+
+[data-descricoes-dos-animais] section.ativo {
+  display: block !important;
+}
+
+[data-descricoes-dos-animais] section.ativo.aparecer-pela-direita {
+  animation: aparecer-pela-direita .5s forwards;
+}
+
+[data-descricoes-dos-animais] section.ativo.aparecer-por-baixo {
+  animation: aparecer-por-baixo .5s forwards;
+}
+
+@keyframes aparecer-pela-direita {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0); 
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes aparecer-por-baixo {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); 
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}

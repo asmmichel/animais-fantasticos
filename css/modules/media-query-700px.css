@@ -1,0 +1,44 @@
+@media (max-width: 700px) {
+
+  /* Grid Externo do Body */
+  .grid-externo-geral {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Menu, Grid Interno do Content, Footer */
+  .nav-menu, .grid-das-sections, .footer-copyright {
+    grid-column: 1;
+  }
+
+  /* Menu */
+  .nav-menu {
+    margin-top: 0px;
+  }
+
+  /* Grid Interno do Content */
+  .grid-das-sections {
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+  }
+
+  /* H1 */
+  .titulo {
+    font-size: 3rem;
+  }
+
+  /* Section Animais e Descrição */
+  .fotos-dos-animais {
+    grid-column: 1;
+  }
+
+  /* FAQ */
+  .faq-acordeao, .lista-de-contatos, .mapa, .grid-interno-dos-numeros {
+    grid-column: 1 / 3;
+  }
+
+  /* Footer */
+  .footer-copyright {
+    margin-bottom: 0px;
+  }
+
+}

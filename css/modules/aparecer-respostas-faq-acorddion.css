@@ -1,0 +1,32 @@
+[data-faq-acordeao] dt::after {
+  content: '⮟';
+  margin-left: 5px;
+}
+
+[data-faq-acordeao] dt.ativo::after {
+  content: '⮝';
+}
+
+[data-faq-acordeao] dt {
+  cursor: pointer;
+}
+
+.js [data-faq-acordeao] dd {
+  display: none;
+}
+
+[data-faq-acordeao] dd.ativo {
+  display: block;
+  animation: animacaoListaAcordeao .5s forwards;
+}
+
+@keyframes animacaoListaAcordeao {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 120px;
+  }
+}
