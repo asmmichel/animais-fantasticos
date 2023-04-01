@@ -20,6 +20,8 @@ initFaqAcorddion.init();
 const initFotosDescricoes = new FotosComSuasDescricoes('[data-fotos-dos-animais] li', '[data-descricoes-dos-animais] section');
 initFotosDescricoes.init();
 
+
+
 aparecerSection();
 criarSemaforoDeFuncionamento();
 criarTooltipDoMapa();
