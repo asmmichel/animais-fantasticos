@@ -1,6 +1,6 @@
 import aparecerSection from './modules/aparecer-section.js';
 import criarSemaforoDeFuncionamento from './modules/criar-semaforo-de-funcionamento.js';
-import criarTooltipDoMapa from './modules/criar-tooltip-do-mapa.js';
+import TooltipDoMapa from './modules/tooltip-do-mapa.js';
 import FotosComSuasDescricoes from './modules/fotos-com-suas-descricoes.js';
 import iniciarMenuMobile from './modules/iniciar-menu-mobile.js';
 import Modal from './modules/modal.js';
@@ -23,10 +23,11 @@ initFotosDescricoes.init();
 const initModal = new Modal('[data-abrir-modal]', '[data-fechar-modal]', '[data-section-modal]');
 initModal.init();
 
+const initTooltipDoMapa = new TooltipDoMapa('[data-div-mapa]');
+initTooltipDoMapa.init();
 
 aparecerSection();
 criarSemaforoDeFuncionamento();
-criarTooltipDoMapa();
 iniciarMenuMobile();
 iniciarSobreSubmenu();
 requisitarFetchNumerosDosAnimais();
