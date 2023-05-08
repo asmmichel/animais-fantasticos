@@ -1,6 +1,10 @@
 export default class Tooltip {
   constructor(divDaImagem) {
     this.divDaImagem = document.querySelector(divDaImagem);
+
+    this.quandoMouseDentro = this.quandoMouseDentro.bind(this);
+    this.quandoMouseFora = this.quandoMouseFora.bind(this);
+    this.quandoMouseMovendo = this.quandoMouseMovendo.bind(this);
   }
 
   quandoMouseDentro({ currentTarget }) {
@@ -25,7 +29,11 @@ export default class Tooltip {
 
   quandoMouseMovendo(event) {
     this.divDaTooltip.style.top = `${event.pageY + 20}px`;
-    this.divDaTooltip.style.left = `${event.pageX + 20}px`;
+    if (event.pageX + 200 > window.innerWidth) {
+      this.divDaTooltip.style.left = `${event.pageX - 200}px`;
+    } else {
+      this.divDaTooltip.style.left = `${event.pageX + 20}px`;
+    }
   }
 
   adicionarEventListener() {
@@ -38,6 +46,5 @@ export default class Tooltip {
     }
     return this;
   }
-
 
 }

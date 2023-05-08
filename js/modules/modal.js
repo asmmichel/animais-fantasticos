@@ -29,6 +29,7 @@ export default class Modal {
 
   init() {
     if (this.botaoAbrir && this.botaoFechar && this.sectionGeralModal) {
+      this.botaoAbrir.style.cursor = 'pointer';
       this.adicionarEventListener();
     }
     return this;
