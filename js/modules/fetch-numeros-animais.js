@@ -1,13 +1,17 @@
-import iniciarNumerosDosAnimais from './iniciar-numeros-dos-animais.js';
+import AnimaNumeros from './anima-numeros.js';
 
-export default function requisitarFetchNumerosDosAnimais() {
+export default function fetchNumerosAnimais(urlFetch) {
+
+  fazerFetchDosNumeros(urlFetch);
+
   async function fazerFetchDosNumeros(minhaURL) {
     try {
       const rjson = await (await fetch(minhaURL)).json();
       rjson.forEach((objAnimal) => {
         colocarDivDentroDoGridNumeros(objAnimal);
       });
-      iniciarNumerosDosAnimais();
+      const initAnimaNumeros = new AnimaNumeros('[data-numero-do-animal]', '.numeros', 'ativo');
+      initAnimaNumeros.init();
     } catch (Error) {
       document.querySelector('#numeros').style.display = 'none';
       console.log(Error);
@@ -26,6 +30,4 @@ export default function requisitarFetchNumerosDosAnimais() {
     divDoAnimal.innerHTML = `<h3>${objAnimal.especie}</h3><span data-numero-do-animal>${objAnimal.total}</span>`;
     return divDoAnimal;
   }
-
-  fazerFetchDosNumeros('./api/numeros-animais-api.json');
 }

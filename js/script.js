@@ -1,12 +1,12 @@
-import aparecerSection from './modules/aparecer-section.js';
-import criarSemaforoDeFuncionamento from './modules/criar-semaforo-de-funcionamento.js';
-import TooltipDoMapa from './modules/tooltip-do-mapa.js';
+import SectionSuaves from './modules/section-suaves.js';
+import SemaforoFuncionamento from './modules/semaforo-funcionamento.js';
+import Tooltip from './modules/tooltip.js';
 import FotosComSuasDescricoes from './modules/fotos-com-suas-descricoes.js';
-import iniciarMenuMobile from './modules/iniciar-menu-mobile.js';
+import MenuMobile from './modules/menu-mobile.js';
 import Modal from './modules/modal.js';
-import iniciarSobreSubmenu from './modules/iniciar-sobre-submenu.js';
-import requisitarFetchNumerosDosAnimais from './modules/requisitar-fetch-numeros-dos-animais.js';
-import requisitarFetchPrecoDoBitcoin from './modules/requisitar-fetch-preco-do-bitcoin.js';
+import Submenu from './modules/submenu.js';
+import fetchNumerosAnimais from './modules/fetch-numeros-animais.js';
+import fetchPrecoBitcoin from './modules/fetch-preco-bitcoin.js';
 import RespostasFaqAcorddion from './modules/respostas-faq-acorddion.js';
 import ScrollDosLinksInternosSuave from './modules/scroll-dos-links-internos-suave.js';
 
@@ -23,12 +23,21 @@ initFotosDescricoes.init();
 const initModal = new Modal('[data-abrir-modal]', '[data-fechar-modal]', '[data-section-modal]');
 initModal.init();
 
-const initTooltipDoMapa = new TooltipDoMapa('[data-div-mapa]');
-initTooltipDoMapa.init();
+const initTooltip = new Tooltip('[data-div-mapa]');
+initTooltip.init();
 
-aparecerSection();
-criarSemaforoDeFuncionamento();
-iniciarMenuMobile();
-iniciarSobreSubmenu();
-requisitarFetchNumerosDosAnimais();
-requisitarFetchPrecoDoBitcoin();
+const initSectionSuaves = new SectionSuaves('[data-aparecer-section]');
+initSectionSuaves.init();
+
+const initSubmenu = new Submenu('[data-submenu]');
+initSubmenu.init();
+
+const initMenuMobile = new MenuMobile('[data-menu-mobile-botao]', '[data-menu-mobile]');
+initMenuMobile.init();
+
+const initSemaforoFuncionamento = new SemaforoFuncionamento('[data-dias-de-funcionamento]');
+initSemaforoFuncionamento.init();
+
+
+fetchNumerosAnimais('./api/numeros-animais-api.json');
+fetchPrecoBitcoin('https://blockchain.info/ticker');
