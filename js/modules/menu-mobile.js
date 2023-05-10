@@ -9,7 +9,8 @@ export default class MenuMobile {
     this.abrirMenuMobile = this.abrirMenuMobile.bind(this);
   }
 
-  abrirMenuMobile() {
+  abrirMenuMobile(event) {
+    event.preventDefault();
     this.menuMobile.classList.add('ativo');
     this.menuMobileBotao.classList.add('ativo');
 

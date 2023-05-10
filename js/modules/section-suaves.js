@@ -9,7 +9,7 @@ export default class SectionSuaves {
 
   criarObjDistanciaDoTopo() {
     this.objDistanciaDoTopo = [...this.minhasSections].map((section) => {
-      const topo = Math.floor(section.offsetTop - window.innerHeight * 0.70);
+      const topo = Math.floor(section.offsetTop - window.innerHeight * 0.80);
       return {
         section,
         topo,
